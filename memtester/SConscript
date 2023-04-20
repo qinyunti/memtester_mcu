@@ -1,0 +1,23 @@
+import os
+import sys
+
+from wq_modules import *
+from wq_environment import *
+
+Import('env')
+
+libname = 'memtester'
+
+cwd = Dir('.').srcnode().abspath
+core = WQTargetConfig.get_target_core()
+
+include_dir = []
+include_dir.append(os.path.join(cwd, 'inc'))
+
+sources = []
+sources.extend(Glob(os.path.join('src', '*.c')))
+
+env.Append(CPPPATH = include_dir)
+mod = WQModule(libname, sources, env)
+
+Return('mod')

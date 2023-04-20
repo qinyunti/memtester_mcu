@@ -1,2 +1,4 @@
 # memtester_mcu
-移植memtester适合于MCU使用
+
+本项目移植自https://github.com/jnavila/memtester
+使得其移植性更好,更适合于MCU使用

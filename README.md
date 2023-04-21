@@ -21,7 +21,7 @@
 
 - `memtester_types.h`中需要
   
-  定义几个数据类型,`ull`位使用,`ul`为无符号基本数据类型。
+  定义几个数据类型,`ull`未使用,`ul`为无符号基本数据类型。
   
   ```
   typedef unsigned long ul;

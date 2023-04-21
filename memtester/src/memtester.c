@@ -1,4 +1,4 @@
-/*
+﻿/*
  * memtester version 4
  *
  * Very simple but very effective user-space memory tester.
@@ -64,6 +64,7 @@ int memtester_main(ulv* bufa, int testmask, int bufsize, int loops) {
              memtester_printf("ok\n");
         } else {
             exit_code |= EXIT_FAIL_ADDRESSLINES;
+            return exit_code;
         }
         for (i=0;;i++) {
             if (!tests[i].name) break;
@@ -85,5 +86,5 @@ int memtester_main(ulv* bufa, int testmask, int bufsize, int loops) {
         memtester_printf("\n");
     }
     memtester_printf("Done.\n");
-    return 0;
+    return exit_code;
 }

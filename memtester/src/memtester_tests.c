@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Very simple but very effective user-space memory tester.
  * Originally by Simon Kirby <sim@stormix.com> <sim@neato.org>
  * Version 2 by Charles Cazabon <charlesc-memtester@pyropus.ca>
@@ -18,7 +18,6 @@
 
 char progress[] = "-\\|/";
 #define PROGRESSLEN 4
-#define PROGRESSOFTEN 2500
 #define ONE 0x00000001UL
 
 union {
@@ -56,7 +55,7 @@ int test_stuck_address(ulv *bufa, size_t count) {
 
     memtester_printf("           ");
     
-    for (j = 0; j < 16; j++) {
+    for (j = 0; j < STUCK_LOOPS; j++) {
         memtester_printf("\b\b\b\b\b\b\b\b\b\b\b");
         p1 = (ulv *) bufa;
         memtester_printf("setting %3u", j);
@@ -208,7 +207,7 @@ int test_solidbits_comparison(ulv *bufa, ulv *bufb, size_t count) {
 
     memtester_printf("           ");
     
-    for (j = 0; j < 64; j++) {
+    for (j = 0; j < SOLIDBITS_LOOPS; j++) {
         memtester_printf("\b\b\b\b\b\b\b\b\b\b\b");
         q = (j % 2) == 0 ? UL_ONEBITS : 0;
         memtester_printf("setting %3u", j);
@@ -239,7 +238,7 @@ int test_checkerboard_comparison(ulv *bufa, ulv *bufb, size_t count) {
 
     memtester_printf("           ");
     
-    for (j = 0; j < 64; j++) {
+    for (j = 0; j < CHECKERBOARD_LOOPS; j++) {
         memtester_printf("\b\b\b\b\b\b\b\b\b\b\b");
         q = (j % 2) == 0 ? CHECKERBOARD1 : CHECKERBOARD2;
         memtester_printf("setting %3u", j);
@@ -269,7 +268,7 @@ int test_blockseq_comparison(ulv *bufa, ulv *bufb, size_t count) {
 
     memtester_printf("           ");
     
-    for (j = 0; j < 256; j++) {
+    for (j = 0; j < BLOCKSEQ_LOOPS; j++) {
         memtester_printf("\b\b\b\b\b\b\b\b\b\b\b");
         p1 = (ulv *) bufa;
         p2 = (ulv *) bufb;

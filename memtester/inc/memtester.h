@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Very simple (yet, for some reason, very effective) memory tester.
  * Originally by Simon Kirby <sim@stormix.com> <sim@neato.org>
  * Version 2 by Charles Cazabon <charlesc-memtester@pyropus.ca>
@@ -23,6 +23,12 @@ extern "C" {
 #include "memtester_types.h"
 #include "memtester_sizes.h"
 #include "memtester_tests.h"
+
+#define PROGRESSOFTEN 32768  
+#define STUCK_LOOPS 2       /* 16 */
+#define SOLIDBITS_LOOPS 2   /* 64 */
+#define CHECKERBOARD_LOOPS 2      /* 64 */
+#define BLOCKSEQ_LOOPS  1   /* 256 */
 
 int memtester_main(ulv* bufa, int testmask, int bufsize, int loops);
 

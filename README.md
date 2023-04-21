@@ -1,5 +1,6 @@
 # memtester_mcu
 - 源自https://pyropus.ca./software/memtester/
+- 公众号文章-https://mp.weixin.qq.com/s/boRYlDWEzgmDLoRaDM9Vvg 欢迎关注
 
 - 本项目移植自https://github.com/jnavila/memtester
   使得其移植性更好,更适合于MCU使用
